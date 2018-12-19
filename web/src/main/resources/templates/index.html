@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html><head><title>Table sample</title></head><body>
+<form action='/foo' name='form1'>
+    <table id="table1">
+        <script type="text/javascript">
+            for (i = 1; i <= 5; i++) {
+                document.write("<tr><td>" + i
+                    + "</td><td><input name='textfield" + i
+                    + "' type='text'></td></tr>");
+            }
+        </script>
+    </table></form>
+</body></html>
