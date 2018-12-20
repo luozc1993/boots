@@ -3,6 +3,9 @@ server:
 
 
 spring:
+  ##########################################################################
+  ###数据源信息配置
+  ##########################################################################
   datasource:
     name: mysql_test
     type: com.alibaba.druid.pool.DruidDataSource
@@ -32,6 +35,24 @@ spring:
       #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
       pool-prepared-statements: false
       max-pool-prepared-statement-per-connection-size: 20
+  ##########################################################################
+  ###JPA持久化配置
+  ##########################################################################
+  jpa:
+    #指定数据库类型
+    database: MYSQL
+    #指定是否需要在日志中显示sql语句
+    show-sql: true
+    #指定自动创建|更新|验证数据库表结构等配置，配置成update
+    #表示如果数据库中存在持久化类对应的表则不创建，不存在则创建对应的表
+    hibernate:
+      ddl-auto: update
+      #指定命名策略
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+
+
+
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml

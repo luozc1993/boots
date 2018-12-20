@@ -2,6 +2,7 @@ package cn.luozc.web.controller;
 
 
 
+import cn.luozc.domain.JsonData;
 import cn.luozc.domain.User;
 import cn.luozc.service.UserService;
 import cn.luozc.utils.R;
@@ -35,6 +36,12 @@ public class UserController {
     public Object findAllUser(@RequestParam(name = "pageNum", required = false, defaultValue = "1") int pageNum,
                               @RequestParam(name = "pageSize", required = false, defaultValue = "10") int pageSize){
         return userService.findAllUser(pageNum,pageSize);
+    }
+
+    @RequestMapping(value = "/test")
+    public JsonData test(){
+        int i = 1/0;
+        return JsonData.success();
     }
 
 }
