@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config_erver" />
+        <module name="dao" />
+        <module name="domain" />
+        <module name="eureka_client" />
+        <module name="eureka_server" />
+        <module name="oa" />
+        <module name="service" />
+        <module name="utils" />
+        <module name="web" />
+        <module name="webmagic" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boots" target="1.8" />
+      <module name="case1200" target="1.8" />
+      <module name="config_erver" target="1.8" />
+      <module name="dao" target="1.8" />
+      <module name="dao (1)" target="1.8" />
+      <module name="dao (2)" target="1.8" />
+      <module name="domain" target="1.8" />
+      <module name="eureka_client" target="1.8" />
+      <module name="eureka_server" target="1.8" />
+      <module name="oa" target="1.8" />
+      <module name="script" target="1.8" />
+      <module name="service" target="1.8" />
+      <module name="utils" target="1.8" />
+      <module name="web" target="1.8" />
+      <module name="webmagic" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="boots" options="-parameters" />
+      <module name="case1200" options="-parameters" />
+      <module name="config_erver" options="-parameters" />
+      <module name="dao" options="-parameters" />
+      <module name="dao (1)" options="-parameters" />
+      <module name="dao (2)" options="-parameters" />
+      <module name="domain" options="-parameters" />
+      <module name="eureka_client" options="-parameters" />
+      <module name="eureka_server" options="-parameters" />
+      <module name="oa" options="-parameters" />
+      <module name="script" options="-parameters" />
+      <module name="service" options="-parameters" />
+      <module name="utils" options="-parameters" />
+      <module name="web" options="-parameters" />
+      <module name="webmagic" options="-parameters" />
+    </option>
+  </component>
+</project>
