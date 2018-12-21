@@ -50,9 +50,6 @@ spring:
       #指定命名策略
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
+
 
 
