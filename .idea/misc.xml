@@ -22,7 +22,6 @@
         <option value="$PROJECT_DIR$/chart/pom.xml" />
         <option value="$PROJECT_DIR$/eureka_server/pom.xml" />
         <option value="$PROJECT_DIR$/eureka_client/pom.xml" />
-        <option value="$PROJECT_DIR$/config_erver/pom.xml" />
         <option value="$PROJECT_DIR$/oa/pom.xml" />
       </list>
     </option>
