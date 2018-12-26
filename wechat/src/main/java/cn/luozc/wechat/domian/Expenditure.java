@@ -27,11 +27,8 @@ public class Expenditure {
     @Column(name = "money")
     private double money;
 
-    /** 角色与用户存在N-N关联 */
-    /**  用户和部门存在多对一的关联 部门 FK(OA_ID_DEPT)   */
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity = ExpenditureType.class)
-    @JoinColumn(name = "type",referencedColumnName = "ID",foreignKey = @ForeignKey(name = "FK_Expenditure_ExpenditureType"))
-    private ExpenditureType type;
+    @Column(name = "type")
+    private int type;
 
     /**time 支出类型*/
     @Column(name = "time")

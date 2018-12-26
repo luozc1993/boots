@@ -1,6 +1,8 @@
 package cn.luozc.wechat.service;
 
+import cn.luozc.wechat.domian.Expenditure;
 import cn.luozc.wechat.domian.WechatUserInfo;
+import cn.luozc.wechat.repository.ExpenditureRepository;
 import cn.luozc.wechat.repository.WechatUserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,9 @@ public class WechatService {
     @Autowired
     private WechatUserInfoRepository wechatUserInfoRepository;
 
+    @Autowired
+    private ExpenditureRepository expenditureRepository;
+
     /**
      * 根据openid获取用户微信信息
      * @param openid 微信id
@@ -34,6 +39,15 @@ public class WechatService {
      */
     public WechatUserInfo addWechatUserInfo(WechatUserInfo wechatUserInfo){
         return wechatUserInfoRepository.save(wechatUserInfo);
+    }
+
+    /**
+     * 添加账单记录
+     * @param expenditure
+     * @return
+     */
+    public Expenditure addExpenditure(Expenditure expenditure){
+        return expenditureRepository.save(expenditure);
     }
 
 }

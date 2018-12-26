@@ -3,6 +3,7 @@ package cn.luozc.wechat.controller;
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.luozc.utils.JsonData;
 import cn.luozc.wechat.config.WxMaConfiguration;
+import cn.luozc.wechat.domian.Expenditure;
 import cn.luozc.wechat.domian.WechatUserInfo;
 import cn.luozc.wechat.service.WechatService;
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -70,8 +71,8 @@ public class WechatController {
         }
         return JsonData.success(userInfo);
     }
-
-    public JsonData addExpenditure(){
-        return JsonData.success();
+    @RequestMapping("/addExpenditure")
+    public JsonData addExpenditure(Expenditure expenditure){
+        return JsonData.success( wechatService.addExpenditure(expenditure));
     }
 }

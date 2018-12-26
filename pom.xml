@@ -16,6 +16,9 @@
         <module>utils</module>
         <module>dao</module>
         <module>web</module>
+        <module>wechat</module>
+        <module>webmagic</module>
+        <module>oa</module>
     </modules>
 
     <!--指定项目的spring boot的版本-->
