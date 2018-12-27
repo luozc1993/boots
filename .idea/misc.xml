@@ -9,6 +9,7 @@
     <file type="web" url="file://$PROJECT_DIR$/eureka_client" />
     <file type="web" url="file://$PROJECT_DIR$/eureka_server" />
     <file type="web" url="file://$PROJECT_DIR$/oa" />
+    <file type="web" url="file://$PROJECT_DIR$/wechat" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
