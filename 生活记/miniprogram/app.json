@@ -1,0 +1,41 @@
+{
+  "usingComponents": {
+    "van-field": "/dist/field/index",
+    "van-picker": "/dist/picker/index",
+    "van-popup": "/dist/popup/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-datetime-picker": "/dist/datetime-picker/index",
+    "van-button": "/dist/button/index",
+    "van-dialog": "/dist/dialog/index"
+  },
+  "pages": [
+    
+    "pages/index/index",
+    "pages/homePage/homePage",
+    "pages/expenditure/expenditure"
+
+    
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffcf69",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#5e81bf",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/homePage/homePage",
+        "text": "统计"
+      }
+    ]
+  }
+}

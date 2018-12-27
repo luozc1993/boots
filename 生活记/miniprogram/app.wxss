@@ -1,0 +1,8 @@
+@import "/dist/cell/index.wxss";
+/**app.wxss**/
+.container {
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #dedede;
+} 
+

@@ -1,0 +1,9 @@
+.matrix-cell{
+  background-color: #ffcf69;
+  display: inline-block; 
+  vertical-align:top; 
+}
+.matrix-cell-icon{height: 60%;display: flex; align-items: center;font-size: 24px;}
+.matrix-cell-icon view{margin: auto;text-align: center;}
+.matrix-cell-text{height: 40%;display: flex; align-items: center;font-size: 14px;}
+.matrix-cell-text view{margin: auto;text-align: center;}

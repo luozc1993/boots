@@ -1,0 +1,25 @@
+<view class='container'>
+  <van-cell-group>
+    <!--金额-->
+    <van-field value="{{ money }}" type="digit" border  label="金额(元)" input-align="right" 
+    clickable placeholder="请输入金额 单位:元"  bindinput="moneyInput"/>
+    <!--分类-->
+    <van-cell title="分类" value="{{types[typeIndex]['name']}}" title-width="90px"  bind:click="onShowType" border/>
+    <van-popup show="{{ typeShow }}"  position="bottom" bind:close="onHideType">
+      <van-picker show-toolbar title="分类" columns="{{ types }}" value-key="name"
+      bind:cancel="onHideType" bind:confirm="onConfirmType" />
+    </van-popup>
+    <!--时间-->
+    <van-cell title="时间" value="{{dateTimeData}}" title-width="90px"  
+      bind:click="onShowTime" border/>
+    <van-popup show="{{ timeShow }}"  position="bottom" bind:close="onHideTime" >
+      <van-datetime-picker type="datetime" value="{{ dateTimeStamp }}"   
+        bind:change="onDateTimeChange" bind:confirm="onConfirmTime"/>
+    </van-popup>
+  </van-cell-group>
+  <!--确认按钮-->
+  <button type='primary' lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="submit" class='submitBtn'>保存</button>
+  
+  <van-dialog id="van-dialog" />
+
+</view>

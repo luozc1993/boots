@@ -1,0 +1,10 @@
+<view class="matrix-list">
+  <view wx:for="{{matrixData}}" wx:key="key" style='width:{{width}}px;height:{{height}}px' class="matrix-cell">
+    <view class="matrix-cell-icon">
+      <view>{{item.value}}</view>
+    </view>
+    <view class="matrix-cell-text">
+      <view>{{item.lebal}}</view>
+    </view>
+  </view>
+</view>
