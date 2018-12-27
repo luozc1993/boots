@@ -1,4 +1,5 @@
 @import "/dist/cell/index.wxss";
+@import "/style/iconfont.wxss";
 /**app.wxss**/
 .container {
   align-items: center;

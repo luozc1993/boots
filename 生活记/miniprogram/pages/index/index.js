@@ -1,4 +1,4 @@
-// pages/index/index.js
+var app = getApp();
 Page({
 
   /**
@@ -6,18 +6,31 @@ Page({
    */
   data: {
     matrixData: [
-      { "lebal": "标签内容", "value": "100"}, 
-      { "lebal": "标签内容", "value": "120" },
-      { "lebal": "标签内容", "value": "120" }
-    ],
-    matrixLen:3
+      { "lebal": "收入", "value": "100","color":"red"}, 
+      { "lebal": "支出", "value": "120","color":"green" }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.server_url + '/wechat/wx511689066f0df42a/getSum',
+      header: app.globalData.header,
+      success: function (res) {
+        if (res.data.status) {
+         var matrixData = [
+           { "lebal": "收入", "value": res.data.data, "color": "red" },
+            { "lebal": "支出", "value": "120", "color": "green" }
+          ]
+          _this.setData({
+            matrixData: matrixData
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -67,5 +80,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  expenditure:function(){
+    wx.navigateTo({
+      url:"../expenditure/expenditure"
+    })
   }
 })

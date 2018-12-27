@@ -75,4 +75,9 @@ public class WechatController {
     public JsonData addExpenditure(Expenditure expenditure){
         return JsonData.success( wechatService.addExpenditure(expenditure));
     }
+
+    @RequestMapping("/getSum")
+    public JsonData getSum(String openid){
+        return JsonData.success( wechatService.getSum());
+    }
 }

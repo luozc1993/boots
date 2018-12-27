@@ -1,9 +1,17 @@
-<view class="matrix-list">
-  <view wx:for="{{matrixData}}" wx:key="key" style='width:{{width}}px;height:{{height}}px' class="matrix-cell">
-    <view class="matrix-cell-icon">
+<!--
+  <matrix matrixData="{{matrixData}}" matrixLen="2" 
+    lebalSize="16px" valueSize="28px" themeColor="#ffcf69"/>
+-->
+
+<view class="matrix-list" style='background-color: {{themeColor}};'>
+  <view wx:for="{{matrixData}}" wx:key="key" 
+  style='width:{{width}}px;height:{{height}}px' class="matrix-cell">
+    <view class="matrix-cell-icon" 
+      style='color:{{item.color}};font-size:{{valueSize}}'>
       <view>{{item.value}}</view>
     </view>
-    <view class="matrix-cell-text">
+    <view class="matrix-cell-text" 
+      style='color:{{item.color}};font-size:{{lebalSize}}'>
       <view>{{item.lebal}}</view>
     </view>
   </view>

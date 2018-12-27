@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "component-tag-name": "/custom/matrix/matrix"
+    "matrix": "/custom/matrix/matrix"
   }
 }

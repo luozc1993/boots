@@ -27,10 +27,16 @@ public class Expenditure {
     @Column(name = "money")
     private double money;
 
-    @Column(name = "type")
-    private int type;
+    @Column(name = "ceneration_type")
+    private int cenerationType;
 
     /**time 支出类型*/
     @Column(name = "time")
     private Long time;
+
+    @Column(name = "openid")
+    private String  openid;
+
+    @Column(name = "type")
+    private int type;
 }

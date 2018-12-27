@@ -1,4 +1,10 @@
 <view>
   <!-- 以下是对一个自定义组件的引用 -->
-  <component-tag-name matrixData="{{matrixData}}" matrixLen="{{matrixLen}}"></component-tag-name>
+  <matrix matrixData="{{matrixData}}" matrixLen="2" 
+    lebalSize="16px" valueSize="28px" themeColor="#ffcf69"/>
+  
+   <view style='height:36px;text-align:center;margin-top:12px'>
+    <button type="primary" style='background-color:#ffcf69;'
+       size='mini' class='iconfont icon-add_light' bindtap='expenditure'> 记 一 笔 </button>
+   </view>
 </view>

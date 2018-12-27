@@ -5,8 +5,10 @@ import cn.luozc.wechat.domian.WechatUserInfo;
 import cn.luozc.wechat.repository.ExpenditureRepository;
 import cn.luozc.wechat.repository.WechatUserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -22,6 +24,9 @@ public class WechatService {
 
     @Autowired
     private ExpenditureRepository expenditureRepository;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     /**
      * 根据openid获取用户微信信息
@@ -50,4 +55,7 @@ public class WechatService {
         return expenditureRepository.save(expenditure);
     }
 
+    public String getSum(){
+        return  expenditureRepository.thisDaySum("ooIAf0fgpigY_31OU6GVXiSi_MfY");
+    }
 }

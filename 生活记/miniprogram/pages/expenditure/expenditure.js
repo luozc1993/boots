@@ -113,7 +113,7 @@ Page({
     // 发起网络请求
     wx.request({
       url: app.globalData.server_url + '/wechat/wx511689066f0df42a/addExpenditure',
-      data: { "money": money, "type": type, "time": time},
+      data: { "money": money, "type": type, "time": time,"openid":app.globalData.openid},
       header: app.globalData.header,
       success: function (res) {
         if (res.data.status) {

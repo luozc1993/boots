@@ -15,7 +15,7 @@ App({
   Date: date,
   //全局变量
   globalData: {
-    server_url: "http://wx.luozc.cn",
+    server_url: "https://wx.luozc.cn",
     openid: "",
     sessionkey: "",
     wechatUserInfo:{},
