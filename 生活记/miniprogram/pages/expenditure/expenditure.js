@@ -1,13 +1,14 @@
 var app = getApp();
 import Dialog from '../../dist/dialog/dialog';
 import login from '../common/login.js';
+import Notify from '../../dist/notify/notify';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    money:0,
+    money:"",
     //分类
     types: [{ "name": '伙食费', "id": 1 }, { "name": '日常用品', "id": 2}, 
       { "name": '交通费用', "id": 3 }, { "name": '请客送礼', "id": 4}, 
@@ -108,6 +109,10 @@ Page({
     login.addUserinfo(this, e.detail.userInfo);
 
     var money = this.data.money;
+    if (!money || money==0){
+      Notify('金额不能为空');
+      return false;
+    }
     var type = this.data.types[this.data.typeIndex]['id'];
     var time = this.data.dateTimeStamp;
     // 发起网络请求
@@ -116,8 +121,9 @@ Page({
       data: { "money": money, "type": type, "time": time,"openid":app.globalData.openid},
       header: app.globalData.header,
       success: function (res) {
-        if (res.data.status) {
-        }
+        wx.navigateBack({
+          delta: 1
+        })
       }
     })
   }

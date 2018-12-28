@@ -21,5 +21,5 @@
   <button type='primary' lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="submit" class='submitBtn'>保存</button>
   
   <van-dialog id="van-dialog" />
-
+<van-notify id="van-notify" />
 </view>

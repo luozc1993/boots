@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface ExpenditureRepository extends JpaRepository<Expenditure, Long> {
 
-    @Query(" select sum(a.money) from Expenditure a where a.openid = :openid")
-    String thisDaySum(@Param("openid") String openid);
+    @Query(" select sum(a.money) from Expenditure a where a.openid = :openid and a.time>:startTime and a.time< :endTime")
+    String thisDaySum(@Param("openid") String openid,@Param("startTime")long startTime,@Param("endTime")long endTime);
 }

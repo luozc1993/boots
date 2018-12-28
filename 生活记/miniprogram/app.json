@@ -7,7 +7,8 @@
     "van-cell-group": "/dist/cell-group/index",
     "van-datetime-picker": "/dist/datetime-picker/index",
     "van-button": "/dist/button/index",
-    "van-dialog": "/dist/dialog/index"
+    "van-dialog": "/dist/dialog/index",
+    "van-notify": "/dist/notify/index"
   },
   "pages": [
     

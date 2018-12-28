@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.TimeZone;
 
 /**
  * @Author: luozhicong
@@ -56,6 +57,9 @@ public class WechatService {
     }
 
     public String getSum(){
-        return  expenditureRepository.thisDaySum("ooIAf0fgpigY_31OU6GVXiSi_MfY");
+        long current = System.currentTimeMillis();
+        long zero = current/(1000*3600*24)*(1000*3600*24) - TimeZone.getDefault().getRawOffset();
+
+        return  expenditureRepository.thisDaySum("ooIAf0fgpigY_31OU6GVXiSi_MfY",zero,zero+24*60*60*1000);
     }
 }
