@@ -11,7 +11,7 @@
     "van-notify": "/dist/notify/index"
   },
   "pages": [
-    
+    "pages/speak/speak",
     "pages/index/index",
     "pages/homePage/homePage",
     "pages/expenditure/expenditure"

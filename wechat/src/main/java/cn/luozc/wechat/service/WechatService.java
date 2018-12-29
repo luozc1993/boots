@@ -56,10 +56,25 @@ public class WechatService {
         return expenditureRepository.save(expenditure);
     }
 
-    public String getSum(){
-        long current = System.currentTimeMillis();
-        long zero = current/(1000*3600*24)*(1000*3600*24) - TimeZone.getDefault().getRawOffset();
+    /**
+     * 获取指定时间范围支出数据
+     * @param openid    用户微信小程序id
+     * @param startTime 起始时间
+     * @param endTime   结束时间
+     * @return  String
+     */
+    public String getExpenditureSum(String openid,long startTime,long endTime){
+        return  expenditureRepository.getExpenditureSum(openid,startTime,endTime);
+    }
 
-        return  expenditureRepository.thisDaySum("ooIAf0fgpigY_31OU6GVXiSi_MfY",zero,zero+24*60*60*1000);
+    /**
+     * 获取指定时间范围支出数据
+     * @param openid    用户微信小程序id
+     * @param startTime 起始时间
+     * @param endTime   结束时间
+     * @return  String
+     */
+    public String getIncomeSum(String openid,long startTime,long endTime){
+        return  expenditureRepository.getIncomeSum(openid,startTime,endTime);
     }
 }

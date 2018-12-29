@@ -2,6 +2,7 @@ package cn.luozc.wechat.controller;
 
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.luozc.utils.JsonData;
+import cn.luozc.utils.date.DateUtils;
 import cn.luozc.wechat.config.WxMaConfiguration;
 import cn.luozc.wechat.domian.Expenditure;
 import cn.luozc.wechat.domian.WechatUserInfo;
@@ -78,6 +79,9 @@ public class WechatController {
 
     @RequestMapping("/getSum")
     public JsonData getSum(String openid){
-        return JsonData.success( wechatService.getSum());
+        long sameDateStartTime = DateUtils.getSameDayStartTime().getTime();
+        long sameDateEndTime = DateUtils.getSameDayEndTime().getTime();
+
+        return JsonData.success();
     }
 }
