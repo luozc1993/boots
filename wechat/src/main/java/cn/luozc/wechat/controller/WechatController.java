@@ -9,12 +9,15 @@ import cn.luozc.wechat.domian.WechatUserInfo;
 import cn.luozc.wechat.service.WechatService;
 import me.chanjar.weixin.common.error.WxErrorException;
 import net.sf.json.JSONObject;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -77,11 +80,34 @@ public class WechatController {
         return JsonData.success( wechatService.addExpenditure(expenditure));
     }
 
+    /**
+     * 获取收入当前收入支出汇总
+     * @param openid
+     * @return
+     */
     @RequestMapping("/getSum")
     public JsonData getSum(String openid){
         long sameDateStartTime = DateUtils.getSameDayStartTime().getTime();
         long sameDateEndTime = DateUtils.getSameDayEndTime().getTime();
-
-        return JsonData.success();
+        JSONObject json = new JSONObject();
+        String Expenditure = wechatService.getExpenditureSum(openid,sameDateStartTime,sameDateEndTime);
+        json.accumulate("Expenditure",Expenditure==null?"0":Expenditure);
+        String Income =  wechatService.getIncomeSum(openid,sameDateStartTime,sameDateEndTime);
+        json.accumulate("Income", Income==null?"0":Income);
+        return JsonData.success(json);
     }
+
+    @Test
+    public void test33() {
+        String str = "吃饭20.1,-20.1,20,-20";
+        Pattern p = Pattern.compile("[-]\\d*[.]\\d*|\\d*[.]\\d*|[-]\\d*|\\d*");
+        Matcher m = p.matcher(str);
+        while (m.find()) {
+            if (!"".equals(m.group()))
+                System.out.println("价格:" + m.group());
+        }
+
+
+    }
+
 }

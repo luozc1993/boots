@@ -11,8 +11,12 @@
     "van-notify": "/dist/notify/index"
   },
   "pages": [
-    "pages/speak/speak",
     "pages/index/index",
+    "pages/speak/speak",
+    "pages/wepy/wepy",
+   
+    
+   
     "pages/homePage/homePage",
     "pages/expenditure/expenditure"
 
@@ -38,5 +42,11 @@
         "text": "统计"
       }
     ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.2.2",
+      "provider": "wx069ba97219f66d99"
+    }
   }
 }

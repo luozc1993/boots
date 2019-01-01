@@ -1,4 +1,6 @@
 var app = getApp();
+var plugin = requirePlugin("WechatSI")
+let manager = plugin.getRecordRecognitionManager()
 Page({
 
   /**
@@ -8,17 +10,21 @@ Page({
     matrixData: [
       { "lebal": "收入", "value": "0","color":"red"}, 
       { "lebal": "支出", "value": "0","color":"green" }
-    ]
+    ],
+    wave:"wave",
+    value:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     this.getSum();
+   this.onStop();
   },
   onShow: function (options) {
-    this.getSum();
+   
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -34,8 +40,8 @@ Page({
       success: function (res) {
         if (res.data.status) {
           var matrixData = [
-            { "lebal": "收入", "value": 0, "color": "red" },
-            { "lebal": "支出", "value": res.data.data, "color": "green" }
+            { "lebal": "收入", "value": res.data.data.Income, "color": "red" },
+            { "lebal": "支出", "value": res.data.data.Expenditure, "color": "green" }
           ]
           _this.setData({
             matrixData: matrixData
@@ -50,16 +56,27 @@ Page({
     })
   },
 
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-  expenditure:function(){
-    wx.navigateTo({
-      url:"../expenditure/expenditure"
+  longpress:function(){
+    this.setData({
+      wave:"wave ripple"
     })
+    manager.start({
+      duration: 30000, lang: "zh_CN"
+    })
+  },
+  touchend:function(){
+    manager.stop();
+    this.setData({
+      wave: "wave"
+    })
+  },
+  onStop:function(){
+    var that = this;
+    manager.onStop = function (res) {
+      console.log(res)
+      that.setData({
+        value: res.result
+      })
+    }
   }
 })

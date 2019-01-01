@@ -9,6 +9,7 @@
       <van-picker show-toolbar title="分类" columns="{{ types }}" value-key="name"
       bind:cancel="onHideType" bind:confirm="onConfirmType" />
     </van-popup>
+
     <!--时间-->
     <van-cell title="时间" value="{{dateTimeData}}" title-width="90px"  
       bind:click="onShowTime" border/>

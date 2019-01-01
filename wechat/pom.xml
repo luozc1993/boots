@@ -38,6 +38,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
         </dependency>
+        <!--热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!--junit测试-->
         <dependency>
             <groupId>junit</groupId>
@@ -82,7 +88,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -90,8 +95,29 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--fork :  如果没有该项配置，肯定devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
+        <resources>
+
+            <resource>
+
+                <directory>lib</directory>
+
+                <targetPath>BOOT-INF/lib/</targetPath>
+
+                <includes>
+
+                    <include>**/*.jar</include>
+
+                </includes>
+
+            </resource>
+
+        </resources>
     </build>
 
 </project>

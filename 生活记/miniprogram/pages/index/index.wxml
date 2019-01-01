@@ -2,9 +2,36 @@
   <!-- 以下是对一个自定义组件的引用 -->
   <matrix matrixData="{{matrixData}}" matrixLen="2" 
     lebalSize="16px" valueSize="28px" themeColor="#ffcf69"/>
+  <van-cell-group>
   
-   <view style='height:36px;text-align:center;margin-top:12px'>
-    <button type="primary" style='background-color:#ffcf69;'
-       size='mini' class='iconfont icon-add_light' bindtap='expenditure'> 记 一 笔 </button>
-   </view>
+  <van-field
+    value="{{ value }}"
+    title-width="70px"
+    center
+    clearable
+    label="输入账单"
+    placeholder="例如：吃饭20、交通20"
+    border="true"
+    use-button-slot
+  >
+    <van-button slot="button" size="small" type="primary">提交</van-button>
+  </van-field>
+</van-cell-group>
+
+
+  <view class="main">
+    <view class="microphone" >
+      <view class="i">
+        <image class="fa" src="../../images/speak.png" ></image>
+      </view>
+      <view class="{{ wave }}"
+        bindlongpress="longpress" bindtouchend="touchend"></view>
+    </view>
+    <view class="words">
+      <text>
+        长按录入账单\n 
+        录入说明：吃饭20元，交通20元
+      </text>
+    </view>
+  </view>
 </view>
