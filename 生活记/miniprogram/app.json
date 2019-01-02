@@ -12,13 +12,10 @@
   },
   "pages": [
     "pages/index/index",
-    "pages/speak/speak",
-    "pages/wepy/wepy",
    
     
    
-    "pages/homePage/homePage",
-    "pages/expenditure/expenditure"
+    "pages/homePage/homePage"
 
     
   ],

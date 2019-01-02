@@ -4,7 +4,7 @@ import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.luozc.utils.JsonData;
 import cn.luozc.utils.date.DateUtils;
 import cn.luozc.wechat.config.WxMaConfiguration;
-import cn.luozc.wechat.domian.Expenditure;
+import cn.luozc.wechat.domian.Bill;
 import cn.luozc.wechat.domian.WechatUserInfo;
 import cn.luozc.wechat.service.WechatService;
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -75,9 +76,10 @@ public class WechatController {
         }
         return JsonData.success(userInfo);
     }
-    @RequestMapping("/addExpenditure")
-    public JsonData addExpenditure(Expenditure expenditure){
-        return JsonData.success( wechatService.addExpenditure(expenditure));
+    @RequestMapping("/addBill")
+    public JsonData addExpenditure(Bill bill){
+        bill.setTime(new Date().getTime());
+        return JsonData.success( wechatService.addExpenditure(bill));
     }
 
     /**
@@ -90,7 +92,7 @@ public class WechatController {
         long sameDateStartTime = DateUtils.getSameDayStartTime().getTime();
         long sameDateEndTime = DateUtils.getSameDayEndTime().getTime();
         JSONObject json = new JSONObject();
-        String Expenditure = wechatService.getExpenditureSum(openid,sameDateStartTime,sameDateEndTime);
+        String Expenditure = wechatService.getBillSum(openid,sameDateStartTime,sameDateEndTime);
         json.accumulate("Expenditure",Expenditure==null?"0":Expenditure);
         String Income =  wechatService.getIncomeSum(openid,sameDateStartTime,sameDateEndTime);
         json.accumulate("Income", Income==null?"0":Income);

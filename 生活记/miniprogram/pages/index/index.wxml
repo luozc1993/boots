@@ -3,21 +3,34 @@
   <matrix matrixData="{{matrixData}}" matrixLen="2" 
     lebalSize="16px" valueSize="28px" themeColor="#ffcf69"/>
   <van-cell-group>
-  
+  <van-notify id="van-notify" />
   <van-field
-    value="{{ value }}"
+    value="{{ typeName }}"
     title-width="70px"
     center
     clearable
-    label="输入账单"
-    placeholder="例如：吃饭20、交通20"
+    bind:change="typeNameChange"
+    label="类型"
+    placeholder="例如：吃饭、交通"
     border="true"
-    use-button-slot
   >
-    <van-button slot="button" size="small" type="primary">提交</van-button>
+  </van-field>
+  <van-field
+    value="{{ money }}"
+    title-width="70px"
+    center
+    clearable
+    label="金额"
+    bind:change="moneyChange"
+    placeholder="例如：20、100"
+    border="true"
+  >
   </van-field>
 </van-cell-group>
-
+<view class="buttons">
+  <van-button class="button" bindtap='submit' data-type="0" type="danger">收入</van-button>
+  <van-button class="button" bindtap='submit' data-type="1" type="primary">支出</van-button>
+</view>
 
   <view class="main">
     <view class="microphone" >

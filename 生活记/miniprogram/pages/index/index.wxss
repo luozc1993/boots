@@ -4,7 +4,7 @@
     text-align: center;
 }
 .main {
-    margin-top: 120px;
+    margin-top: 80px;
 }
 .microphone {
     text-align: center;
@@ -83,3 +83,6 @@
     padding: 2px 0;
     outline: none;
 }
+
+.buttons{text-align: center}
+.buttons .button{margin: 20px}

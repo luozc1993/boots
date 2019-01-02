@@ -12,31 +12,38 @@ import javax.persistence.*;
  * @Date: Create in 16:56 2018/12/26/026
  */
 @Entity
-@Table(name = "ab_expenditure")
+@Table(name = "ab_bill")
 @Getter
 @Setter
 @ToString
-public class Expenditure {
+public class Bill {
 
     /** ID NUMBER 编号 PK主键自增长*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
-
+    /**money 金额*/
     @Column(name = "money")
     private double money;
 
-    @Column(name = "ceneration_type")
-    private int cenerationType;
+    /**type 收入或支出*/
+    @Column(name = "type")
+    private int type;
 
-    /**time 支出类型*/
+    /**time 时间*/
     @Column(name = "time")
     private Long time;
 
+    /**
+     * 用户微信id
+     */
     @Column(name = "openid")
     private String  openid;
 
-    @Column(name = "type")
-    private int type;
+    /**
+     * 账单类型
+     */
+    @Column(name = "type_name")
+    private String typeName;
 }

@@ -1,8 +1,8 @@
 package cn.luozc.wechat.service;
 
-import cn.luozc.wechat.domian.Expenditure;
+import cn.luozc.wechat.domian.Bill;
 import cn.luozc.wechat.domian.WechatUserInfo;
-import cn.luozc.wechat.repository.ExpenditureRepository;
+import cn.luozc.wechat.repository.BillRepository;
 import cn.luozc.wechat.repository.WechatUserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -24,7 +24,7 @@ public class WechatService {
     private WechatUserInfoRepository wechatUserInfoRepository;
 
     @Autowired
-    private ExpenditureRepository expenditureRepository;
+    private BillRepository billRepository;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -49,11 +49,11 @@ public class WechatService {
 
     /**
      * 添加账单记录
-     * @param expenditure
+     * @param bill
      * @return
      */
-    public Expenditure addExpenditure(Expenditure expenditure){
-        return expenditureRepository.save(expenditure);
+    public Bill addExpenditure(Bill bill){
+        return billRepository.save(bill);
     }
 
     /**
@@ -63,8 +63,8 @@ public class WechatService {
      * @param endTime   结束时间
      * @return  String
      */
-    public String getExpenditureSum(String openid,long startTime,long endTime){
-        return  expenditureRepository.getExpenditureSum(openid,startTime,endTime);
+    public String getBillSum(String openid,long startTime,long endTime){
+        return  billRepository.getExpenditureSum(openid,startTime,endTime);
     }
 
     /**
@@ -75,6 +75,6 @@ public class WechatService {
      * @return  String
      */
     public String getIncomeSum(String openid,long startTime,long endTime){
-        return  expenditureRepository.getIncomeSum(openid,startTime,endTime);
+        return  billRepository.getIncomeSum(openid,startTime,endTime);
     }
 }

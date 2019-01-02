@@ -19,7 +19,6 @@ Component({
       type: Array,
       value: [],
       observer(newVal, oldVal, changedPath) {
-        console.log(wx.getSystemInfoSync().windowWidth)
 
       }
     },

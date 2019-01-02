@@ -1,6 +1,8 @@
 var app = getApp();
-var plugin = requirePlugin("WechatSI")
-let manager = plugin.getRecordRecognitionManager()
+var plugin = requirePlugin("WechatSI");
+let manager = plugin.getRecordRecognitionManager();
+import login from '../common/login.js';
+import Notify from '../../dist/notify/notify';
 Page({
 
   /**
@@ -12,19 +14,28 @@ Page({
       { "lebal": "支出", "value": "0","color":"green" }
     ],
     wave:"wave",
-    value:""
+    typeName:"",
+    money:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
-    this.getSum();
-   this.onStop();
+   
+    login.wxlogin();
+    
   },
   onShow: function (options) {
-   
+    var _this = this;
+    
+    setTimeout(function () {
+      _this.getSum();
+      _this.onStop();
+    }, 1000) //延迟时间 这里是1秒
+    
+
+    
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -36,6 +47,7 @@ Page({
     var _this = this;
     wx.request({
       url: app.globalData.server_url + '/wechat/wx511689066f0df42a/getSum',
+      data: { "openid": app.globalData.openid},
       header: app.globalData.header,
       success: function (res) {
         if (res.data.status) {
@@ -73,10 +85,48 @@ Page({
   onStop:function(){
     var that = this;
     manager.onStop = function (res) {
-      console.log(res)
-      that.setData({
-        value: res.result
-      })
+      var value = res.result;
+      console.log(value)
+      var str = /\-\d\d*\.\d\d*|\-[1-9]\d*|\-[1-9]\d|[1-9]\d*/;
+      var arr = value.match(str);
+      if(!arr){
+        Notify('内容格式错误:' + value);
+      }else{
+        var num = arr[0];
+        that.setData({
+          typeName: value.substr(0, value.indexOf(num)),
+          money: num
+        })
+      }
     }
+  },
+  submit:function(e){
+    var that = this;
+    var type = e.target.dataset.type;
+    var typeName = this.data.typeName;
+    var money = this.data.money;
+    // 发起网络请求
+    wx.request({
+      url: app.globalData.server_url + '/wechat/wx511689066f0df42a/addBill',
+      data: { "money": money, "type": type, "typeName": typeName, "openid":  app.globalData.openid },
+      header: app.globalData.header,
+      success: function (res) {
+        that.setData({
+          typeName: "",
+          money:""
+        })
+        that.getSum();
+      }
+    })
+  },
+  typeNameChange:function(e){
+    this.setData({
+      typeName: e.detail
+    })
+  },
+  moneyChange: function (e) {
+    this.setData({
+      money: e.detail
+    })
   }
 })
