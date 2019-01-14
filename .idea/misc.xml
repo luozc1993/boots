@@ -15,7 +15,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/web/pom.xml" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
         <option value="$PROJECT_DIR$/domain/pom.xml" />
         <option value="$PROJECT_DIR$/utils/pom.xml" />
@@ -25,6 +24,8 @@
         <option value="$PROJECT_DIR$/eureka_client/pom.xml" />
         <option value="$PROJECT_DIR$/oa/pom.xml" />
         <option value="$PROJECT_DIR$/wechat/pom.xml" />
+        <option value="$PROJECT_DIR$/web/pom.xml" />
+        <option value="$PROJECT_DIR$/sso/pom.xml" />
       </list>
     </option>
   </component>

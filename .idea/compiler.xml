@@ -12,6 +12,7 @@
         <module name="eureka_server" />
         <module name="oa" />
         <module name="service" />
+        <module name="sso" />
         <module name="utils" />
         <module name="web" />
         <module name="webmagic" />
@@ -31,6 +32,7 @@
       <module name="oa" target="1.8" />
       <module name="script" target="1.8" />
       <module name="service" target="1.8" />
+      <module name="sso" target="1.8" />
       <module name="utils" target="1.8" />
       <module name="web" target="1.8" />
       <module name="webmagic" target="1.8" />
@@ -51,6 +53,7 @@
       <module name="oa" options="-parameters" />
       <module name="script" options="-parameters" />
       <module name="service" options="-parameters" />
+      <module name="sso" options="-parameters" />
       <module name="utils" options="-parameters" />
       <module name="web" options="-parameters" />
       <module name="webmagic" options="-parameters" />
