@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dao" />
         <module name="domain" />
+        <module name="easyweb-shiro" />
         <module name="eureka_client" />
         <module name="eureka_server" />
         <module name="oa" />
@@ -27,6 +28,7 @@
       <module name="dao (1)" target="1.8" />
       <module name="dao (2)" target="1.8" />
       <module name="domain" target="1.8" />
+      <module name="easyweb-shiro" target="1.8" />
       <module name="eureka_client" target="1.8" />
       <module name="eureka_server" target="1.8" />
       <module name="oa" target="1.8" />
@@ -48,6 +50,7 @@
       <module name="dao (1)" options="-parameters" />
       <module name="dao (2)" options="-parameters" />
       <module name="domain" options="-parameters" />
+      <module name="easyweb-shiro" options="-parameters" />
       <module name="eureka_client" options="-parameters" />
       <module name="eureka_server" options="-parameters" />
       <module name="oa" options="-parameters" />

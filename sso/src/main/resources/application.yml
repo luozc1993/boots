@@ -1,0 +1,13 @@
+server:
+  port: 20003
+spring:
+  datasource:
+    username: lzc
+    password: luozc1993.
+    url: jdbc:mysql://119.29.119.221:3306/activiti
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect

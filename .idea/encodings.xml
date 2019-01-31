@@ -4,9 +4,9 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easyweb-shiro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/oa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sso" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sso" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web" charset="UTF-8" />

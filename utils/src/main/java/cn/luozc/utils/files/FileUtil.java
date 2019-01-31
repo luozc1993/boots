@@ -51,7 +51,7 @@ public class FileUtil {
             return false;
         }
         if(!newFile.exists()){                  //判断目标文件夹是否存在不存在则创建
-            if(newFile.mkdir()){
+            if(newFile.mkdirs()){
                 System.out.println("目标文件夹不存在，文件夹创建成功");
             }else{
                 System.out.println("目标文件夹不存在，文件夹创建失败");
