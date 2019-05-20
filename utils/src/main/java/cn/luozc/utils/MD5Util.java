@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
+import java.util.UUID;
 
 public class MD5Util {
 	/**
@@ -57,7 +58,8 @@ public class MD5Util {
     }
     public static void main(String[] args) {
     	//MD5Util.getMD5Str("133060329219NVwP7mJZIYQFpSQGYAHIUMHDUi9PK2m");
-    	System.out.println(MD5Util.getMD5Str("1234569NVwP7mJZIYQFpSQGYAHIUMHDUi9PK2m"));
+    	System.out.println(MD5Util.getMD5Str("123456"));
+        System.out.println(UUID.randomUUID().toString());
 	}
 
    
